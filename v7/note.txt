@@ -1,0 +1,29 @@
+How to run unix v5 and v6 and v7 using simh
+1. install simh in debian with command: # apt-get install simh
+
+2. download unix v5 image from: http://simh.trailing-edge.com/kits/uv5swre.zip
+    and unix v6 from: http://simh.trailing-edge.com/kits/uv6swre.zip
+    and unix v7 from: http://simh.trailing-edge.com/kits/uv7swre.zip
+
+3. unzip v5 or v6 or v7 in a dir called unix, then create a file named pdp11.ini.
+     a) for v5, add below lines to pdp11.ini:
+set cpu U18
+attach rk0 unix_v5_rk.dsk
+boot rk0
+     b) for v6, add below lines to pdp11.ini:
+set cpu U18
+attach rk0 unix0_v6_rk.dsk
+attach rk1 unix1_v6_rk.dsk
+attach rk2 unix2_v6_rk.dsk
+attach rk3 unix3_v6_rk.dsk
+boot rk0
+     c) for v7, add below lines to pdp11.ini:
+set cpu U18
+set rl0 RL02
+attach rl0 unix_v7_rl.dsk
+boot rl0
+
+4. run command
+    $ pdp11
+a) for v5 and v6, input 'unix' after prompt '@', then use 'root' to login.
+b) for v7, input 'boot' after prompt '@', and input 'rl(0,0)rl2unix' after prompt ':'.
