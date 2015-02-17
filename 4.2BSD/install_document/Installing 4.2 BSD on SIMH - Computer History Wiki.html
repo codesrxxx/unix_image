@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<!-- saved from url=(0050)http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH -->
+<html lang="en" dir="ltr" class="client-js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Installing 4.2 BSD on SIMH - Computer History Wiki</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.20.2">
+<link rel="shortcut icon" href="http://gunkies.org/favicon.ico">
+<link rel="search" type="application/opensearchdescription+xml" href="http://gunkies.org/w/opensearch_desc.php" title="Computer History Wiki (en)">
+<link rel="EditURI" type="application/rsd+xml" href="http://gunkies.org/w/api.php?action=rsd">
+<link rel="copyright" href="http://www.gnu.org/copyleft/fdl.html">
+<link rel="alternate" type="application/atom+xml" title="Computer History Wiki Atom feed" href="http://gunkies.org/w/index.php?title=Special:RecentChanges&feed=atom">
+<link rel="stylesheet" href="http://gunkies.org/w/load.php?debug=false&lang=en&modules=mediawiki.legacy.commonPrint%2Cshared%7Cskins.monobook&only=styles&skin=monobook&*">
+<!--[if IE 6]><link rel="stylesheet" href="/w/skins/monobook/IE60Fixes.css?303" media="screen" /><![endif]-->
+<!--[if IE 7]><link rel="stylesheet" href="/w/skins/monobook/IE70Fixes.css?303" media="screen" /><![endif]--><style>.mw-collapsible-toggle{float:right} li .mw-collapsible-toggle{float:none} .mw-collapsible-toggle-li{list-style:none}
+/* cache key: mediawiki-wiki_:resourceloader:filter:minify-css:7:4250852ed2349a0d4d0fc6509a3e7d4c */.suggestions{overflow:hidden;position:absolute;top:0;left:0;width:0;border:none;z-index:1099;padding:0;margin:-1px -1px 0 0} html > body .suggestions{margin:-1px 0 0 0}.suggestions-special{position:relative;background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0;margin-top:-2px;display:none;padding:0.25em 0.25em;line-height:1.25em}.suggestions-results{background-color:white;cursor:pointer;border:solid 1px #aaaaaa;padding:0;margin:0}.suggestions-result{color:black;margin:0;line-height:1.5em;padding:0.01em 0.25em;text-align:left}.suggestions-result-current{background-color:#4C59A6;color:white}.suggestions-special .special-label{color:gray;text-align:left}.suggestions-special .special-query{color:black;font-style:italic;text-align:left}.suggestions-special .special-hover{background-color:silver}.suggestions-result-current .special-label,.suggestions-result-current .special-query{color:white}.autoellipsis-matched,.highlight{font-weight:bold}
+/* cache key: mediawiki-wiki_:resourceloader:filter:minify-css:7:9780324491b653a3780e2d029bdc140c */</style><meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="http://gunkies.org/w/load.php?debug=false&lang=en&modules=site&only=styles&skin=monobook&*">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}
+/* cache key: mediawiki-wiki_:resourceloader:filter:minify-css:7:ddab79a0c5ad7fb46863c544773158cf */</style>
+
+<script src="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/load.php"></script><script src="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/load(1).php"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Installing_4.2_BSD_on_SIMH","wgTitle":"Installing 4.2 BSD on SIMH","wgCurRevisionId":10463,"wgArticleId":350,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["SIMH Tutorials"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Installing_4.2_BSD_on_SIMH","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":1,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":1,"showtoolbar":1,"skin":"monobook","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,"watchlistdays":3,
+"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","watchToken":false});;},{},{});
+/* cache key: mediawiki-wiki_:resourceloader:filter:minify-js:7:c89fc005766e312c555f83b307d08d63 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script><script type="text/javascript" src="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/load(2).php"></script>
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Installing_4_2_BSD_on_SIMH skin-monobook action-view">
+<div id="globalWrapper">
+<div id="column-content"><div id="content" class="mw-body-primary">
+	<a id="top"></a>
+	
+	<h1 id="firstHeading" class="firstHeading"><span dir="auto">Installing 4.2 BSD on SIMH</span></h1>
+	<div id="bodyContent" class="mw-body">
+		<div id="siteSub">From Computer History Wiki</div>
+		<div id="contentSub"></div>
+		<div id="jump-to-nav" class="mw-jump">Jump to: <a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#column-one">navigation</a>, <a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#searchInput">search</a></div>
+		<!-- start content -->
+<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is the procedure that I have used to install <a href="http://gunkies.org/wiki/4.2_BSD" title="4.2 BSD">4.2 BSD</a> onto <a href="http://gunkies.org/wiki/SIMH" title="SIMH">SIMH</a>'s vax 11/780 emulator.
+</p>
+<table id="toc" class="toc"><tbody><tr><td><div id="toctitle"><h2>Contents</h2><span class="toctoggle">&nbsp;[<a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#" class="internal" id="togglelink">hide</a>]&nbsp;</span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Requirements"><span class="tocnumber">1</span> <span class="toctext">Requirements</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Preparing_for_installation"><span class="tocnumber">2</span> <span class="toctext">Preparing for installation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Boot_1."><span class="tocnumber">3</span> <span class="toctext">Boot 1.</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#install.ini"><span class="tocnumber">3.1</span> <span class="toctext">install.ini</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Booting_the_emulator"><span class="tocnumber">3.2</span> <span class="toctext">Booting the emulator</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Restoring_the_rootdump"><span class="tocnumber">3.3</span> <span class="toctext">Restoring the rootdump</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Boot_2."><span class="tocnumber">4</span> <span class="toctext">Boot 2.</span></a>
+<ul>
+<li class="toclevel-2 tocsection-8"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#boot.ini"><span class="tocnumber">4.1</span> <span class="toctext">boot.ini</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Booting_the_emulator_2"><span class="tocnumber">4.2</span> <span class="toctext">Booting the emulator</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Preparing_the_disk"><span class="tocnumber">4.3</span> <span class="toctext">Preparing the disk</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Restoring_the_usr_slice"><span class="tocnumber">4.4</span> <span class="toctext">Restoring the usr slice</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Configuring_the_fstab"><span class="tocnumber">4.5</span> <span class="toctext">Configuring the fstab</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-13"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#First_Multiuser_Boot"><span class="tocnumber">5</span> <span class="toctext">First Multiuser Boot</span></a>
+<ul>
+<li class="toclevel-2 tocsection-14"><a href="http://gunkies.org/wiki/Installing_4.2_BSD_on_SIMH#Enabling_remote_users"><span class="tocnumber">5.1</span> <span class="toctext">Enabling remote users</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></tbody></table>
+<h2> <span class="mw-headline" id="Requirements"> Requirements </span></h2>
+<p>You will need the following materials to put together a 4.2 BSD installation:
+</p>
+<ul><li>A working perl interpeter to make the tape images.<br>
+</li><li>A copy of gzip.<br>
+</li><li>A method of extracting the boot file from either the binaries (tar/gzip) or <a href="http://gunkies.org/wiki/Uudecode" title="Uudecode">uudecode</a> to extract it from <a href="http://gunkies.org/wiki/Boot42" title="Boot42">here</a>.<br>
+</li><li>A compiled binary of vax780 from <a href="http://gunkies.org/wiki/SIMH" title="SIMH">SIMH</a>, along with the vmb.exe again from <a href="http://gunkies.org/wiki/SIMH" title="SIMH">SIMH</a>.
+</li></ul>
+<p>An alternative is to download the 4.2 BSD tape from <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/bsd42/files/Install%20tapes/4.2%20BSD/4.2bsd.tap.bz2/download">here</a>, along with the boot file <a rel="nofollow" class="external text" href="http://sourceforge.net/projects/bsd42/files/Install%20tapes/4.2%20BSD/boot42/download">here</a>.  The <a href="http://gunkies.org/w/index.php?title=Bzip2&action=edit&redlink=1" class="new" title="Bzip2 (page does not exist)">bzip2</a> program will be needed to decompress the tape image.
+</p><p><br>
+You will need the following files from any 4 BSD archive from the 4.2 directory.  I have used the files from <a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/">archive.huihoo.org</a>.  You can use whatever method you like to download them, wget, a web browser etc..<br><br>
+</p><p><a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/ingres.tar.gz">ingres.tar.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/miniroot.gz">miniroot.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/new.tar.gz">new.tar.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/rootdump.gz">rootdump.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/src.tar.gz">src.tar.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/srcsys.tar.gz">srcsys.tar.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/stand.gz">stand.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/usr.tar.gz">usr.tar.gz</a><br>
+<a rel="nofollow" class="external text" href="http://unix-archive.huihoo.org/4BSD/Distributions/4.2BSD/vfont.tar.gz">vfont.tar.gz</a><br><br>
+</p>
+<h2> <span class="mw-headline" id="Preparing_for_installation"> Preparing for installation </span></h2>
+<p>With the files downloaded you will need to uncompress them all and then create the tape file.
+</p><p>The following command will decompress the tape files.
+</p>
+<pre>gzip -d *.gz
+</pre>
+<p>The tape needs to be created with the <a href="http://gunkies.org/wiki/Mkdisttap.pl" title="Mkdisttap.pl">mkdisttap.pl</a> program.  Simply run the program and redirect it into a file called 42.tap .
+</p>
+<pre>% ./mkdisttap.pl &gt; 42.tap
+% ls -l 42.tap
+-rw-r--r--  1 Neozeed  +SYSTEM  69943640 Feb  6 12:39 42.tap
+</pre>
+<p>Next you will need the boot program.  I have uploaded a copy onto this wiki in uuencoded format.  To decode it, simply access the <a href="http://gunkies.org/wiki/Boot42" title="Boot42">article</a>, and copy the contents of the quoted text (the begin/end part INCLUDING the begin &amp; end segments) and save it to a text file.  Then you will need to run the uudecode file as follows:
+</p>
+<pre>% ls -l boot42.uue
+-rw-r--r--  1 Neozeed  None_ploc  9117 Feb  6 12:09 boot42.uue
+% uudecode boot42.uue
+% ls -l boot42
+-rw-------  1 Neozeed  None_ploc  6600 Feb  6 12:28 boot42
+% file boot42
+boot42: data
+</pre>
+<h2> <span class="mw-headline" id="Boot_1.">  Boot 1. </span></h2>
+<p>We are going to use the following config file to start the first phase of the installation.  Save the following configuration into a file such as 'install.ini'.  Since we are going to boot directly into the miniroot the rq1 disk will hold the installation target.  Since the 'normal' way to install is to install from tape onto the first disk, we will have to add a device file uppon boot for the second disk, and be sure to point the xtr program to the second disk.
+</p>
+<h3> <span class="mw-headline" id="install.ini"> install.ini </span></h3>
+<pre>set rq0 ra81
+at rq0 miniroot
+set rq1 ra81
+at rq1 rq.dsk
+set rq1 dis
+set rq2 dis
+set rq3 dis
+set rp dis
+set lpt dis
+set rl dis
+set tq dis
+set tu dis
+att ts 42.tap
+set tti 7b
+set tto 7b
+load -o boot42 0
+d r10 9
+d r11 0
+run 2
+</pre>
+<h3> <span class="mw-headline" id="Booting_the_emulator"> Booting the emulator </span></h3>
+<p>You then simply run the emulator and pass it the config file.
+</p>
+<pre>C:\4.2BSD\work&gt;vax780 install.ini
+
+VAX780 simulator V3.8-0
+RQ: creating new file
+1.txt&gt; set rq1 dis
+Command not allowed
+loading ra(0,0)boot
+Boot
+: ra(0,0)vmunix
+199488+56036+51360 start 0x11a0
+4.2 BSD UNIX #9: Wed Nov 2 16:00:29 PST 1983
+real mem  = 8384512
+avail mem = 7073792
+using 102 buffers containing 835584 bytes of memory
+mcr0 at tr1
+mcr1 at tr2
+uba0 at tr3
+hk0 at uba0 csr 177440 vec 210, ipl 15
+rk0 at hk0 slave 0
+rk1 at hk0 slave 1
+uda0 at uba0 csr 172150 vec 774, ipl 15
+ra0 at uda0 slave 0
+ra1 at uda0 slave 1
+zs0 at uba0 csr 172520 vec 224, ipl 15
+ts0 at zs0 slave 0
+dz0 at uba0 csr 160100 vec 300, ipl 15
+dz1 at uba0 csr 160110 vec 310, ipl 15
+dz2 at uba0 csr 160120 vec 320, ipl 15
+dz3 at uba0 csr 160130 vec 330, ipl 15
+root on ra0
+WARNING: clock gained 94 days -- CHECK AND RESET THE DATE!
+WARNING: should run interleaved swap with &gt;= 2Mb
+erase ^?, kill ^U, intr ^C
+#
+</pre>
+<h3> <span class="mw-headline" id="Restoring_the_rootdump"> Restoring the rootdump </span></h3>
+<p>From here we are now running from the miniroot.  The next steps are as follows:
+</p>
+<pre># cd /dev
+# ./MAKEDEV ra1
+# cd /
+# disk=ra1 type=ra81 tape=ts xtr
+</pre>
+<p>This will create a 'device' for the ra1 disk, then run the xtr program to restore the root dump.
+</p>
+<pre>erase ^?, kill ^U, intr ^C
+# cd /dev
+# ./MAKEDEV ra1
+# cd /
+# disk=ra1 type=ra81 tape=ts xtr
+Build root file system
+Warning: 538 sector(s) in last cylinder unallocated
+/dev/rra1a:     15884 sectors in 23 cylinders of 14 tracks, 51 se
+        8.1Mb in 2 cyl groups (16 c/g, 5.85Mb/g, 1856 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 11520,
+Check the file system
+** /dev/rra1a
+** Last Mounted on
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+2 files, 9 used, 7420 free (20 frags, 925 blocks)
+Rewind tape
+Restore the dump image of the root
+Warning: ./lost+found: File exists
+** /dev/rra1a
+** Last Mounted on /a
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+313 files, 3568 used, 3861 free (21 frags, 480 blocks)
+Root filesystem extracted
+
+If this is a 780, update floppy
+If this is a 730, update the cassette
+#
+</pre>
+<p>After this stage, I just sync the disk a few times, then halt the emulator (CONTROL+E) and exit out.  Now we are ready for stage two.
+</p>
+<pre>If this is a 730, update the cassette
+# sync
+# sync
+# sync
+
+Simulation stopped, PC: 80001620 (FFS #0,#20,8003ED44,R0)
+sim&gt; q
+Goodbye
+
+C:\4.2BSD\work&gt;
+</pre>
+<p><br>
+</p>
+<h2> <span class="mw-headline" id="Boot_2.">  Boot 2. </span></h2>
+<p>Now that the install disk is prepared, we need to use a different config file to reflect us going back to a single disk/tape configuration.  The new configuration is as follows:
+</p>
+<h3> <span class="mw-headline" id="boot.ini"> boot.ini </span></h3>
+<pre>set rq0 ra81
+att rq0 rq.dsk
+set rq1 dis
+set rq2 dis
+set rq3 dis
+set rp dis
+set lpt dis
+set rl dis
+set tq dis
+set tu dis
+att ts 42.tap
+set tti 7b
+set tto 7b
+load -o boot42 0
+d r10 9
+d r11 0
+run 2
+</pre>
+<h3> <span class="mw-headline" id="Booting_the_emulator_2"> Booting the emulator </span></h3>
+<p>Now boot up the emulator with the boot.ini
+</p>
+<pre>C:\4.2BSD\work&gt;vax780.exe boot.ini
+
+VAX780 simulator V3.8-0
+TS: creating new file
+loading ra(0,0)boot
+Boot
+: ra(0,0)vmunix
+199488+56036+51360 start 0x11a0
+4.2 BSD UNIX #9: Wed Nov 2 16:00:29 PST 1983
+real mem  = 8384512
+avail mem = 7073792
+using 102 buffers containing 835584 bytes of memory
+mcr0 at tr1
+mcr1 at tr2
+uba0 at tr3
+hk0 at uba0 csr 177440 vec 210, ipl 15
+rk0 at hk0 slave 0
+rk1 at hk0 slave 1
+uda0 at uba0 csr 172150 vec 774, ipl 15
+ra0 at uda0 slave 0
+ra1 at uda0 slave 1
+zs0 at uba0 csr 172520 vec 224, ipl 15
+ts0 at zs0 slave 0
+dz0 at uba0 csr 160100 vec 300, ipl 15
+dz1 at uba0 csr 160110 vec 310, ipl 15
+dz2 at uba0 csr 160120 vec 320, ipl 15
+dz3 at uba0 csr 160130 vec 330, ipl 15
+root on ra0
+WARNING: should run interleaved swap with &gt;= 2Mb
+Automatic reboot in progress...
+Mon Feb  6 05:05:49 PST 1984
+Can't open checklist file: /etc/fstab
+Automatic reboot failed... help!
+erase ^?, kill ^U, intr ^C
+#
+</pre>
+<h3> <span class="mw-headline" id="Preparing_the_disk"> Preparing the disk </span></h3>
+<p>Now we have to prep the machine for both the tape, and the type of disk.  Type in the following commands.
+</p>
+<pre># disk=ra
+# name=ra0h;type=ra81
+# cd /dev
+# ./MAKEDEV ts0;sync
+# cd /
+# newfs $name $type
+</pre>
+<p>The output will be like this:
+</p>
+<pre># disk=ra
+# name=ra0h;type=ra81
+# cd /dev
+# ./MAKEDEV ts0;sync
+# cd /
+# newfs $name $type
+Warning: 28 sector(s) in last cylinder unallocated
+/dev/rra0h:     759668 sectors in 1064 cylinders of 14 tracks, 51 sectors
+        389.0Mb in 67 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 11512, 22992, 34472, 45952, 57432, 68912, 80392, 91872, 103352,
+ 114832, 126312, 137792, 149272, 160752, 172232, 182816, 194296, 205776, 217256,
+ 228736, 240216, 251696, 263176, 274656, 286136, 297616, 309096, 320576, 332056,
+ 343536, 355016, 365600, 377080, 388560, 400040, 411520, 423000, 434480, 445960,
+ 457440, 468920, 480400, 491880, 503360, 514840, 526320, 537800, 548384, 559864,
+ 571344, 582824, 594304, 605784, 617264, 628744, 640224, 651704, 663184, 674664,
+ 686144, 697624, 709104, 720584, 731168, 742648, 754128,
+#
+</pre>
+<h3> <span class="mw-headline" id="Restoring_the_usr_slice"> Restoring the usr slice </span></h3>
+<p>The disk's /usr slice will not have been formatted.  We can not go ahead and mount it, and restore the /usr files.  Then we unmount the slice, and run fsck to make sure everything is ok.
+</p>
+<pre># mount /dev/$name /usr
+# cd /usr
+# mkdir sys
+# cd sys
+# mt rew
+# mt fsf 3
+# tar xpbf 20 /dev/rmt12
+# cd ..
+# mt fsf
+# tar xpbf 20 /dev/rmt12
+# cd /
+# chmod 755 / /usr /usr/sys
+# rm -rf sys
+# ln -s /usr/sys sys
+# umount /dev/$name
+# fsck /dev/r$name
+</pre>
+<p>Likewise, the output should be similar to this:
+</p>
+<pre># chmod 755 / /usr /usr/sys
+# rm -rf sys
+# ln -s /usr/sys sys
+# umount /dev/$name
+# fsck /dev/r$name
+** /dev/rra0h
+** Last Mounted on /usr
+** Phase 1 - Check Blocks and Sizes
+** Phase 2 - Check Pathnames
+** Phase 3 - Check Connectivity
+** Phase 4 - Check Reference Counts
+** Phase 5 - Check Cyl groups
+3735 files, 25550 used, 336310 free (166 frags, 84036 blocks)
+#
+</pre>
+<h3> <span class="mw-headline" id="Configuring_the_fstab"> Configuring the fstab </span></h3>
+<p>Now we just need to create the fstab, format the 'home' slice, and then we can reboot the emulator into multiuser mode.  Enter in the following commands:
+</p>
+<pre># cd /etc
+# cp fstab.ra81 fstab
+# newfs ra0g ra81
+# sync
+# reboot
+</pre>
+<p>And the expected output is as follows:
+</p>
+<pre># cd /etc
+# cp fstab.ra81 fstab
+# newfs ra0g ra81
+Warning: 30 sector(s) in last cylinder unallocated
+/dev/rra0g:     82080 sectors in 115 cylinders of 14 tracks, 51 sectors
+        42.0Mb in 8 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)
+super-block backups (for fsck -b#) at:
+ 32, 11512, 22992, 34472, 45952, 57432, 68912, 80392,
+# sync
+# reboot
+syncing disks... done
+
+Reboot requested, PC: 80021716 (ADDL2 #8,SP)
+sim&gt; q
+Goodbye
+</pre>
+<h2> <span class="mw-headline" id="First_Multiuser_Boot"> First Multiuser Boot </span></h2>
+<p>Now we can just re-run the last command, and we should boot multiuser!  By default there is no root password.  Also the system will run fsck uppon boot, so depending on your host computer this could take a while.
+</p><p><br>
+</p>
+<pre>C:\4.2BSD\work&gt;vax780.exe boot.ini
+
+VAX780 simulator V3.8-0
+loading ra(0,0)boot
+Boot
+: ra(0,0)vmunix
+199488+56036+51360 start 0x11a0
+4.2 BSD UNIX #9: Wed Nov 2 16:00:29 PST 1983
+real mem  = 8384512
+avail mem = 7073792
+using 102 buffers containing 835584 bytes of memory
+mcr0 at tr1
+mcr1 at tr2
+uba0 at tr3
+hk0 at uba0 csr 177440 vec 210, ipl 15
+rk0 at hk0 slave 0
+rk1 at hk0 slave 1
+uda0 at uba0 csr 172150 vec 774, ipl 15
+ra0 at uda0 slave 0
+ra1 at uda0 slave 1
+zs0 at uba0 csr 172520 vec 224, ipl 15
+ts0 at zs0 slave 0
+dz0 at uba0 csr 160100 vec 300, ipl 15
+dz1 at uba0 csr 160110 vec 310, ipl 15
+dz2 at uba0 csr 160120 vec 320, ipl 15
+dz3 at uba0 csr 160130 vec 330, ipl 15
+root on ra0
+WARNING: should run interleaved swap with &gt;= 2Mb
+Automatic reboot in progress...
+Mon Feb  6 05:21:02 PST 1984
+/dev/ra0a: 326 files, 3569 used, 3860 free (20 frags, 480 blocks)
+/dev/rra0h: 3735 files, 25550 used, 336310 free (166 frags, 84036 blocks)
+/dev/rra0g: 2 files, 9 used, 77750 free (14 frags, 9717 blocks)
+Mon Feb  6 05:21:15 PST 1984
+check quotas: done.
+local daemons: routed telnetd ftpd talkd syslog sendmail.
+preserving editor files
+clearing /tmp
+standard daemons: update cron accounting mail    Mon Feb 6 05:21:17 PST 1984
+
+ printer.
+starting network: rshd rexecd rlogind rwhod.
+Mon Feb  6 05:21:18 PST 1984
+
+
+4.2 BSD UNIX (myname)
+
+login:
+</pre>
+<p><br>
+Now we can simply logon as root.
+</p>
+<pre>4.2 BSD UNIX (myname)
+
+login: root
+4.2 BSD UNIX #9: Wed Nov 2 16:00:29 PST 1983
+
+Would you like to play a game?
+
+You have mail.
+Don't login as root, use su
+myname#
+</pre>
+<p>From here you can explore the system.  All of the man pages are installed, and there is enough of a base system to get going.  Sadly there are bugs in how <a href="http://gunkies.org/wiki/4.2_BSD" title="4.2 BSD">4.2 BSD</a> and how <a href="http://gunkies.org/wiki/SIMH" title="SIMH">SIMH</a> interact with  the networking, and it is not reliable. As sad as it is to be an 'island' you can however setup the dz serial interface to allow more than one user.
+</p>
+<h3> <span class="mw-headline" id="Enabling_remote_users"> Enabling remote users </span></h3>
+<p>You can add the following lines into the boot.ini (just make sure they are above the boot command or it'll not work correctly..).  This will allow for 8 users to connect on tcp port 8888.
+</p>
+<pre>set dz lines=8
+set dz 7b
+att dz -m 8888
+</pre>
+<p>I would also recommend to windows users, either <a href="http://gunkies.org/wiki/Putty" title="Putty" class="mw-redirect">putty</a>, or <a href="http://gunkies.org/wiki/Syncterm" title="Syncterm">syncterm</a>.  The default telnet client sucks.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 220/1000000
+Preprocessor generated node count: 440/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mediawiki-wiki_:pcache:idhash:350-0!*!0!!en!*!* and timestamp 20150214094534 -->
+</div><div class="printfooter">
+Retrieved from "<a href="http://gunkies.org/w/index.php?title=Installing_4.2_BSD_on_SIMH&oldid=10463">http://gunkies.org/w/index.php?title=Installing_4.2_BSD_on_SIMH&amp;oldid=10463</a>"</div>
+		<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="http://gunkies.org/wiki/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="http://gunkies.org/wiki/Category:SIMH_Tutorials" title="Category:SIMH Tutorials">SIMH Tutorials</a></li></ul></div></div>		<!-- end content -->
+				<div class="visualClear"></div>
+	</div>
+</div></div>
+<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+				<li id="ca-nstab-main" class="selected"><a href="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/Installing 4.2 BSD on SIMH - Computer History Wiki.html" primary="1" context="subject" title="View the content page [alt-c]" accesskey="c">Page</a></li>
+				<li id="ca-talk" class="new"><a href="http://gunkies.org/w/index.php?title=Talk:Installing_4.2_BSD_on_SIMH&action=edit&redlink=1" primary="1" context="talk" title="Discussion about the content page [alt-t]" accesskey="t">Discussion</a></li>
+				<li id="ca-viewsource"><a href="http://gunkies.org/w/index.php?title=Installing_4.2_BSD_on_SIMH&action=edit" primary="1" title="This page is protected.
+You can view its source [alt-e]" accesskey="e">View source</a></li>
+				<li id="ca-history"><a href="http://gunkies.org/w/index.php?title=Installing_4.2_BSD_on_SIMH&action=history" rel="archives" title="Past revisions of this page [alt-h]" accesskey="h">History</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://gunkies.org/w/index.php?title=Special:UserLogin&returnto=Installing+4.2+BSD+on+SIMH" title="You are encouraged to log in; however, it is not mandatory [alt-o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+<a href="http://gunkies.org/wiki/Main_Page" style="background-image: url(/w/icon.png);" title="Visit the main page"></a>
+	</div>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="http://gunkies.org/wiki/Main_Page" title="Visit the main page [alt-z]" accesskey="z">Main page</a></li>
+				<li id="n-portal"><a href="http://gunkies.org/wiki/Computer_History_Wiki:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="http://gunkies.org/wiki/Computer_History_Wiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://gunkies.org/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [alt-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://gunkies.org/wiki/Special:Random" title="Load a random page [alt-x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://gunkies.org/wiki/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="http://gunkies.org/w/index.php" id="searchform">
+				<input type="hidden" name="title" value="Special:Search">
+				<input type="search" name="search" title="Search Computer History Wiki [alt-f]" accesskey="f" id="searchInput" autocomplete="off" placeholder="Search">
+				<input type="submit" name="go" value="Go" title="Go to a page with this exact name if exists" id="searchGoButton" class="searchButton">&nbsp;
+				<input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton">
+			</form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://gunkies.org/wiki/Special:WhatLinksHere/Installing_4.2_BSD_on_SIMH" title="A list of all wiki pages that link here [alt-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://gunkies.org/wiki/Special:RecentChangesLinked/Installing_4.2_BSD_on_SIMH" title="Recent changes in pages linked from this page [alt-k]" accesskey="k">Related changes</a></li>
+				<li id="t-specialpages"><a href="http://gunkies.org/wiki/Special:SpecialPages" title="A list of all special pages [alt-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://gunkies.org/w/index.php?title=Installing_4.2_BSD_on_SIMH&printable=yes" rel="alternate" title="Printable version of this page [alt-p]" accesskey="p">Printable version</a></li>
+				<li id="t-permalink"><a href="http://gunkies.org/w/index.php?title=Installing_4.2_BSD_on_SIMH&oldid=10463" title="Permanent link to this revision of the page">Permanent link</a></li>
+			</ul>
+		</div>
+	</div>
+</div><!-- end of the left (by default at least) column -->
+<div class="visualClear"></div>
+<div id="footer">
+	<div id="f-copyrightico">
+		<a href="http://www.gnu.org/copyleft/fdl.html"><img src="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/gnu-fdl.png" alt="GNU Free Documentation License 1.2" width="88" height="31"></a>
+	</div>
+	<div id="f-poweredbyico">
+		<a href="http://www.mediawiki.org/"><img src="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" width="88" height="31"></a>
+	</div>
+	<ul id="f-list">
+		<li id="lastmod"> This page was last modified on 5 May 2011, at 05:47.</li>
+		<li id="viewcount">This page has been accessed 7,234 times.</li>
+		<li id="copyright">Content is available under <a class="external" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.2</a>.</li>
+		<li id="privacy"><a href="http://gunkies.org/wiki/Computer_History_Wiki:Privacy_policy" title="Computer History Wiki:Privacy policy">Privacy policy</a></li>
+		<li id="about"><a href="http://gunkies.org/wiki/Computer_History_Wiki:About" title="Computer History Wiki:About">About Computer History Wiki</a></li>
+		<li id="disclaimer"><a href="http://gunkies.org/wiki/Computer_History_Wiki:General_disclaimer" title="Computer History Wiki:General disclaimer">Disclaimers</a></li>
+	</ul>
+</div>
+</div>
+<script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest"], null, true);
+}</script><script src="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/load(3).php" type="text/javascript"></script>
+<script src="./Installing 4.2 BSD on SIMH - Computer History Wiki_files/load(4).php"></script>
+<!-- Served in 0.503 secs. --><div class="suggestions" style="display: none; font-size: 12px;"><div class="suggestions-results"></div><div class="suggestions-special"></div></div></body></html>
