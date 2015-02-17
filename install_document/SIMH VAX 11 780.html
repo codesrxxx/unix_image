@@ -1,0 +1,1482 @@
+
+<!-- saved from url=(0044)http://www.employees.org/~kirk/page0207.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+<!-- Copyright (c) 1995-2009 Kirk J. Russell.  ALL RIGHTS RESERVED. -->
+<link rel="SHORTCUT ICON" href="http://www.employees.org/~kirk/favicon.ico" type="image/x-icon">
+<link rel="SHORTCUT" href="http://www.employees.org/~kirk/favicon.ico" type="image/x-icon">
+<title>SIMH VAX 11/780</title>
+</head><body>
+
+<table border="0" cellspacing="0" cellpadding="0" width="100%">
+	<tbody><tr><td align="center">
+	<font size="+3">
+	<a href="http://www.employees.org/~kirk/">Bridlewood Software Testers Guild</a>
+	</font>
+
+	</td></tr>
+</tbody></table>
+
+<br>
+<hr>
+
+<table border="0" cellspacing="0" cellpadding="2"><tbody><tr>
+
+<td valign="top" bgcolor="#DDDDDD">
+	<table border="0" cellspacing="0" cellpadding="1"><tbody><tr><td>
+
+		<font size="+1"><b>Testing</b></font><br>
+		<table cellpadding="4" cellspacing="0" border="0"><tbody><tr><td>
+		<small>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0100.html">Tools</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0101.html">Problem Reports</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0102.html">Techniques</a><br>
+		</small>
+		</td></tr></tbody></table><br>
+
+		<font size="+1"><b>Software</b></font><br>
+		<table cellpadding="4" cellspacing="0" border="0"><tbody><tr><td>
+		<small>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0300.html">VAX patches</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0301.html">SIMH scripts</a><br>
+		</small>
+		</td></tr></tbody></table><br>
+
+		<font size="+1"><b>Test Bed</b></font><br>
+		<table cellpadding="4" cellspacing="0" border="0"><tbody><tr><td>
+		<small>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0204.html">Micro PDP 11/23</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0206.html">Micro PDP 11/53</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0205.html">Micro VAX</a><br>
+			&nbsp;<a href="./SIMH VAX 11 780_files/SIMH VAX 11 780.html">SIMH VAX 11/780</a><br>
+			&nbsp;<br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0290.html">free stuff</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0291.html">terminals</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0292.html">cabinets</a><br>
+		</small>
+		</td></tr></tbody></table><br>
+
+		<font size="+1"><b>Miscellaneous</b></font><br>
+		<table cellpadding="4" cellspacing="0" border="0"><tbody><tr><td>
+		<small>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0900.html">Apiary Tour</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/page0901.html">Vegetarian Recipes</a><br>
+		</small>
+		</td></tr></tbody></table><br>
+
+		<font size="+1"><b>Blogs</b></font><br>
+		<table cellpadding="4" cellspacing="0" border="0"><tbody><tr><td>
+		<small>
+			&nbsp;<a href="http://www.employees.org/~kirk/blog/ba23/index.html">ba23.org</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/blog/kirk/index.html">kirk</a><br>
+			&nbsp;<a href="http://www.employees.org/~kirk/blog/index.html">all</a><br>
+		</small>
+		</td></tr></tbody></table><br>
+
+	</td></tr></tbody></table>
+</td>
+
+<!-- Do not mail to this address, it's a spamtrap <a href="mailto:jiggle@ba23.org">higgle@ba23.org</a> -->
+
+<td align="left" valign="top" rowspan="2">
+	<table border="0" cellspacing="0" cellpadding="2"><tbody><tr><td>
+	<h2><a name="toc">SIMH VAX 11/780</a></h2>
+	<p>
+
+	The minor goal has been to automate the installation of
+	<a href="http://www.tuhs.org/Archive/4BSD/Distributions/"> 4.3BSD </a>
+	on an
+	<a href="http://simh.trailing-edge.com/"> emulated VAX 11/780</a>.
+	A major goal would be to get
+	<a href="http://mail-index.netbsd.org/port-vax/2001/07/14/0000.html"> 4.3BSD </a>
+	running on my
+	<a href="http://www.employees.org/~kirk/page0205.html#bronzevax"> VAX 4000/700A </a>.
+	</p><p>
+
+	</p><ul>
+	<li> installation scripts
+		<ul>
+		<li> <a href="http://www.employees.org/~kirk/page0301.html#getbsd43"> getbsd43 </a>
+		</li></ul>
+	</li><li> installing 4.3BSD on SIMH
+		<ul>
+		<li> <a href="http://www.employees.org/~kirk/page0207.html#bsd43"> Installing 4.3BSD </a>
+		</li><li> <a href="http://www.employees.org/~kirk/page0207.html#bsd43reno"> Installing 4.3BSD-Reno </a>
+		</li><li> <a href="http://www.employees.org/~kirk/page0207.html#bsd43tahoe"> Installing 4.3BSD-Tahoe </a>
+		</li><li> <a href="http://www.employees.org/~kirk/page0207.html#bsd43Quasijarus"> Installing 4.3BSD-Quasijarus </a>
+		</li></ul>
+	</li><li> 4.3BSD software distributions
+		<ul>
+		<li> <a href="http://www.tuhs.org/Archive/4BSD/Distributions/4.3BSD/"> 4.3BSD </a>
+		</li><li> <a href="http://www.tuhs.org/Archive/4BSD/Distributions/4.3BSD-Reno/"> 4.3BSD-Reno </a>
+		</li><li> <a href="ftp://ifctfvax.harhan.org/pub/UNIX/4.3BSD-Quasijarus0c/"> 4.3BSD-Quasijarus0c </a>
+		</li></ul>
+	</li><li> references
+		<ul>
+		<li> <a href="http://mail-index.netbsd.org/port-vax/2004/02/15/0007.html"> VAXstation 4000 model 60 font </a> for your terminal
+		</li><li> <a href="http://simh.trailing-edge.com/pdf/vax780_doc.pdf"> SIMH VAX 11/780</a>
+		</li><li> <a href="http://mailman.trailing-edge.com/pipermail/simh/2006-January/000456.html"> [Simh] 4.2BSD booted multiuser! </a>
+		</li><li> <a href="http://mailman.trailing-edge.com/pipermail/simh/2006-February/000470.html"> [Simh] Reno followup... </a>
+		</li><li> <a href="http://www.retrocomputinggeek.com/index/retrowiki/Install4.3BSDQuasijarus/"> Installing 4.3BSD Quasijarus </a>
+		</li><li> <a href="http://www.unixprogram.com/manuals/smm.01.setup.vax.pdf"> Installing and Operating 4.3BSD-tahoe UNIX on the VAX </a>
+		</li><li> <a href="ftp://ftp.mrynet.com/pub/os/PUPS/PDP-11/Boot_Images/2.11_on_Simh/211bsd/mkdisttap.pl"> mkdisttap.pl </a>
+		</li></ul>
+	</li></ul>
+	<img src="./SIMH VAX 11 780_files/simhvax11780.gif" alt="screen shot of simh">
+	<p>
+
+	</p><dl>
+	<dt><h3><a name="bsd43"> Installing 4.3BSD </a> </h3>
+	</dt><dd>
+	This was a fun
+	<a href="http://en.wikipedia.org/wiki/Retrocomputing"> retrocomputing </a>
+	experience.  I started with a 
+	<a href="http://mailman.trailing-edge.com/pipermail/simh/2006-January/000456.html"> 4.2BSD SIMH config file</a> and followed the instructions from
+	<i>Installing and Operating 4.3BSD on the VAX</i>.  It all just worked.
+	I wrote some
+	<a href="http://www.employees.org/~kirk/page0301.html#getbsd43"> scripts </a>
+	to automate the setup and installation.
+	<p>
+
+	</p><dl>
+	<dt> download the archives required to create installation tape
+	</dt><dd>
+<pre>wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/usr.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/stand.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/miniroot.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/rootdump.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/srcsys.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/src.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/vfont.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/new.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD/ingres.tar.gz
+gzunip *.gz
+</pre>
+	<p>
+
+	</p></dd><dt> format the <i>Installing and Operating 4.3BSD on the VAX</i> paper
+	</dt><dd>
+<pre>pax -rv -pm -f usr.tar -sTdoc/smm/01.setup/T./T doc/smm/01.setup/?.t
+groff -t -ms 0.t 1.t 2.t 3.t 4.t 5.t 6.t a.t b.t c.t | gzip -9 &gt; setup.ps.gz
+</pre>
+	<p>
+
+	</p></dd><dt> download kermit to install in <tt>/usr/new</tt>
+	</dt><dd>
+<pre>wget ftp://kermit.columbia.edu/kermit/bin/gku100.vax-bsd-4.3
+wget ftp://kermit.columbia.edu/kermit/bin/cku211.bsd43-vax
+chmod a+rx,a-w gku100.vax-bsd-4.3 cku211.bsd43-vax
+</pre>
+	<p>
+
+	</p></dd><dt> create an extra archive for additional software to install on target
+	</dt><dd>
+<pre>pax -vw -f install.tar \
+	-sTinstall.shT./tmp/install.shT \
+	-sTcku211.bsd43-vaxT./usr/new/kermitT \
+	-sTgku100.vax-bsd-4.3T./usr/new/gkermitT \
+	install.sh cku211.bsd43-vax gku100.vax-bsd-4.3
+</pre>
+	<p>
+
+	</p></dd><dt> create the installation tape in SIMH format
+	</dt><dd>
+<pre>perl ./mkdisttap.pl &gt; bsd.tap
+</pre>
+	<p>
+
+	</p></dd><dt> extract the boot images from the archives
+	</dt><dd>
+<pre>pax -rv -pm -f srcsys.tar -sT./dist/T./T ./dist/tp/copy
+pax -rv -pm -f srcsys.tar -sT./dist/T./T ./dist/tp/boot
+pax -rv -pm -f srcsys.tar -sT./floppy/bootTboot43T ./floppy/boot
+</pre>
+	<p>
+
+	</p></dd><dt> create a blank RA81 disk image
+	</dt><dd>
+<pre>dd if=/dev/zero of=ra81.dsk bs=1048576 count=435
+</pre>
+	<p>
+
+	</p></dd><dt> run expect to automate SIMH and 4.3BSD, following the
+	<i>Installing and Operating 4.3BSD on the VAX</i> instructions
+	</dt><dd>
+<pre>env BSDDISKLABEL=BSD43 TZ=Canada/Pacific BSDVAX=simh-vax780 expect ../inc/install.exp
+</pre>
+	<p>
+
+	</p></dd><dt> output log of the expect script
+	</dt><dd>
+<font size="-1">
+<pre>
+VAX780 simulator V3.6-0  
+Listening on port 2311 (socket 7)  
+Modem control activated  
+sim&gt; load -o ./tp/copy 0  
+sim&gt; run 2  
+From: ts(0,1) 
+ To: ra(0,1) 
+ Copy completed: 205 records copied 
+
+HALT instruction, PC: 00000001 (HALT)  
+sim&gt; load -o ./tp/boot 0  
+sim&gt; run 2  
+
+ Boot 
+ : ra(0,1)vmunix 
+ 279844+80872+100324 start 0x12f8 
+ 4.3 BSD UNIX #1: Fri Jun  6 19:55:29 PDT 1986 
+     karels@monet.Berkeley.EDU:/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 140 
+ avail mem = 7187456 
+ using 140 buffers containing 524288 bytes of memory 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ ra0 at uda0 slave 0 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ root device? ra0* 
+ WARNING: clock gained 103 days -- CHECK AND RESET THE DATE! 
+ erase ^?, kill ^U, intr ^C  
+# disk=ra0 type=ra81 tape=ts xtr  
+Build root file system  
+Warning: 538 sector(s) in last cylinder unallocated  
+/dev/rra0a:     15884 sectors in 23 cylinders of 14 tracks, 51 sectors  
+        8.1Mb in 2 cyl groups (16 c/g, 5.85Mb/g, 1856 i/g)  
+super-block backups (for fsck -b#) at:  
+ 32, 11520,  
+Check the file system  
+** /dev/rra0a  
+** Last Mounted on   
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+2 files, 9 used, 7420 free (20 frags, 925 blocks, 0.3% fragmentation)  
+Rewind tape  
+Restore the dump image of the root  
+Warning: ./lost+found: File exists  
+** /dev/rra0a  
+** Last Mounted on /a  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+317 files, 4199 used, 3230 free (6 frags, 403 blocks, 0.1% fragmentation)  
+Root filesystem extracted  
+
+If this is an 8650 or 8600, update the console rl02  
+If this is a 780 or 785, update the floppy  
+If this is a 730, update the cassette  
+# sync ; sync ; sync  
+#   
+Simulation stopped, PC: 800018AC (BNEQ 800018CB)  
+sim&gt; load -o ./boot43 0  
+sim&gt; d r10 9  
+sim&gt; d r11 0  
+sim&gt; run 2  
+
+ Boot 
+ : ra(0,0)vmunix 
+ 279844+80872+100324 start 0x12f8 
+ 4.3 BSD UNIX #1: Fri Jun  6 19:55:29 PDT 1986 
+     karels@monet.Berkeley.EDU:/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 140 
+ avail mem = 7187456 
+ using 140 buffers containing 524288 bytes of memory 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ ra0 at uda0 slave 0 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ Changing root device to ra0a 
+ Automatic reboot in progress...  
+Thu Sep 18 22:53:22 PDT 1986  
+Can't open checklist file: /etc/fstab  
+Automatic reboot failed... help!  
+erase ^?, kill ^U, intr ^C  
+# disk=ra ; name=ra0h ; type=ra81  
+# cd /dev ; sh MAKEDEV ts0 dz0 ra1 ra2 ra3 ; cd / ; sync ; sync ; sync  
+# date  
+Thu Sep 18 22:53:30 PDT 1986  
+# date 9912312359.59  
+Fri Dec 31 23:59:59 PST 1999  
+# date  
+Sat Jan  1 00:00:00 PST 2000  
+d# ate 12312359.59  
+Sun Dec 31 23:59:59 PST 2000  
+# date  
+Sun Dec 31 23:59:59 PST 2000  
+d# ate  
+Sun Dec 31 23:59:59 PST 2000  
+d# ate  
+Sun Dec 31 23:59:59 PST 2000  
+d# ate  
+Sun Dec 31 23:59:59 PST 2000  
+# date  
+Mon Jan  1 00:00:00 PST 2001  
+d# ate 12312359.59  
+Mon Dec 31 23:59:59 PST 2001  
+# date  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+# date  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Mon Dec 31 23:59:59 PST 2001  
+d# ate  
+Tue Jan  1 00:00:00 PST 2002  
+d# ate 12312359.59  
+Tue Dec 31 23:59:59 PST 2002  
+# date  
+Tue Dec 31 23:59:59 PST 2002  
+d# ate  
+Tue Dec 31 23:59:59 PST 2002  
+d# ate  
+Tue Dec 31 23:59:59 PST 2002  
+d# ate  
+Tue Dec 31 23:59:59 PST 2002  
+d# ate  
+Tue Dec 31 23:59:59 PST 2002  
+d# ate  
+Tue Dec 31 23:59:59 PST 2002  
+# date  
+Wed Jan  1 00:00:00 PST 2003  
+d# ate 12312359.59  
+Wed Dec 31 23:59:59 PST 2003  
+# date  
+Wed Dec 31 23:59:59 PST 2003  
+d# ate  
+Wed Dec 31 23:59:59 PST 2003  
+d# ate  
+Wed Dec 31 23:59:59 PST 2003  
+d# ate  
+Wed Dec 31 23:59:59 PST 2003  
+d# ate  
+Wed Dec 31 23:59:59 PST 2003  
+d# ate  
+Thu Jan  1 00:00:00 PST 2004  
+d# ate 12312359.59  
+Fri Dec 31 23:59:59 PST 2004  
+# date  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Fri Dec 31 23:59:59 PST 2004  
+d# ate  
+Sat Jan  1 00:00:00 PST 2005  
+d# ate 12312359.59  
+Sat Dec 31 23:59:59 PST 2005  
+# date  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sun Jan  1 00:00:00 PST 2006  
+d# ate 09190553.38  
+Tue Sep 19 05:53:38 PDT 2006  
+# date  
+Tue Sep 19 05:53:38 PDT 2006  
+# hostname BSD43  
+# newfs ${name} ${type}  
+Warning: 680 sector(s) in last cylinder unallocated  
+/dev/rra0h:     291346 sectors in 409 cylinders of 14 tracks, 51 sectors  
+        149.2Mb in 26 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)  
+super-block backups (for fsck -b#) at:  
+ 32, 11520, 23008, 34496, 45984, 57472, 68960, 80448, 91936, 103424,  
+ 114912, 126400, 137888, 149376, 160864, 172352, 182816, 194304, 205792, 217280,  
+ 228768, 240256, 251744, 263232, 274720, 286208,  
+# mount /dev/${name} /usr  
+# cd /usr  
+# mt rew ; mt fsf 3  
+# tar xpbf 20 /dev/rmt12  
+# mkdir /mnt2 src src/sys  
+# cd src/sys  
+# mt fsf  
+# tar xpbf 20 /dev/rmt12  
+# cd / ; chmod 755 / /usr /usr/src /usr/src/sys  
+# rm -f sys ; ln -s usr/src/sys sys  
+# umount /dev/${name}  
+# fsck /dev/r${name}  
+** /dev/rra0h  
+** Last Mounted on /usr  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+4646 files, 35631 used, 102953 free (209 frags, 12843 blocks, 0.2% fragmentation)  
+# /etc/mount /dev/${name} /usr  
+# cd /usr/src  
+# mt rew ; mt fsf 5  
+# tar xpbf 20 /dev/rmt12  
+# mkdir /usr/src/new ; cd /usr/src/new  
+# mt rew ; mt fsf 7  
+# tar xpbf 20 /dev/rmt12  
+# cd /  
+# mt rew ; mt fsf 9  
+# tar xvpbf 20 /dev/rmt12  
+x ./tmp/install.sh, 1662 bytes, 4 tape blocks  
+x ./usr/new/gkermit, 46080 bytes, 90 tape blocks  
+# cd / ; cp /etc/fstab.ra81 /etc/fstab  
+# newfs /dev/rra0g ra81  
+/dev/rra0g:     515508 sectors in 722 cylinders of 14 tracks, 51 sectors  
+        263.9Mb in 46 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)  
+super-block backups (for fsck -b#) at:  
+ 32, 11520, 23008, 34496, 45984, 57472, 68960, 80448, 91936, 103424,  
+ 114912, 126400, 137888, 149376, 160864, 172352, 182816, 194304, 205792, 217280,  
+ 228768, 240256, 251744, 263232, 274720, 286208, 297696, 309184, 320672, 332160,  
+ 343648, 355136, 365600, 377088, 388576, 400064, 411552, 423040, 434528, 446016,  
+ 457504, 468992, 480480, 491968, 503456, 514944,  
+# touch /etc/named.boot  
+# sync ; sync ; sync  
+# cd / ; umount /usr  
+# fsck -y /dev/rra0a  
+** /dev/rra0a  
+** Last Mounted on /  
+** Root file system  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+389 files, 4204 used, 3225 free (9 frags, 402 blocks, 0.1% fragmentation)  
+# halt  
+syncing disks... done 
+ halting (in tight loop); hit 
+ 	^P 
+ 	HALT 
+
+Infinite loop, PC: 8002AFCD (BRB 8002AFCD)  
+sim&gt; load -o ./boot43 0  
+sim&gt; d r10 9  
+sim&gt; d r11 0  
+sim&gt; run 2  
+
+ Boot 
+ : ra(0,0)vmunix 
+ 279844+80872+100324 start 0x12f8 
+ 4.3 BSD UNIX #1: Fri Jun  6 19:55:29 PDT 1986 
+     karels@monet.Berkeley.EDU:/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 140 
+ avail mem = 7187456 
+ using 140 buffers containing 524288 bytes of memory 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ ra0 at uda0 slave 0 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ Changing root device to ra0a 
+ Automatic reboot in progress...  
+Mon Sep 18 22:57:56 PDT 2006  
+/dev/ra0a: SUMMARY INFORMATION BAD (SALVAGED)  
+/dev/ra0a: 389 files, 4204 used, 3225 free (9 frags, 402 blocks, 0.1% fragmentation)  
+
+Reboot requested, PC: 8002B03A (MOVL 8004F628,R0)  
+sim&gt; load -o ./boot43 0  
+sim&gt; d r10 9  
+sim&gt; d r11 0  
+sim&gt; run 2  
+
+ Boot 
+ : ra(0,0)vmunix 
+ 279844+80872+100324 start 0x12f8 
+ 4.3 BSD UNIX #1: Fri Jun  6 19:55:29 PDT 1986 
+     karels@monet.Berkeley.EDU:/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 140 
+ avail mem = 7187456 
+ using 140 buffers containing 524288 bytes of memory 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ ra0 at uda0 slave 0 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ Changing root device to ra0a 
+ Automatic reboot in progress...  
+Mon Sep 18 22:58:09 PDT 2006  
+/dev/ra0a: 389 files, 4204 used, 3225 free (9 frags, 402 blocks, 0.1% fragmentation)  
+/dev/rra0h: SUMMARY INFORMATION BAD (SALVAGED)  
+/dev/rra0h: 15719 files, 91972 used, 46612 free (164 frags, 5806 blocks, 0.1% fragmentation)  
+/dev/rra0g: SUMMARY INFORMATION BAD (SALVAGED)  
+/dev/rra0g: 2 files, 9 used, 245216 free (16 frags, 30650 blocks, 0.0% fragmentation)  
+Mon Sep 18 22:58:33 PDT 2006  
+checking quotas: done.  
+starting system logger  
+checking for core dump... /a/crash: No such file or directory  
+
+starting local daemons: namedSep 18 22:58:36 myname savecore: /a/crash: No such file or directory   
+Sep 18 22:58:36 myname named[53]: No root Nameserver   
+ sendmail.  
+preserving editor files  
+clearing /tmp  
+standard daemons: update cron accounting.  
+starting network daemons: rwhod inetd printer.  
+Mon Sep 18 22:58:37 PDT 2006  
+
+4.3 BSD UNIX (myname.my.domain) (console)   
+
+ login: root   
+Sep 18 22:58:40 myname login: ROOT LOGIN console   
+4.3 BSD UNIX #1: Fri Jun  6 19:55:29 PDT 1986  
+
+Would you like to play a game?  
+
+Don't login as root, use su  
+myname# sync ; sync ; shutdown -f -h now ; sync ; sync ; exit  
+Shutdown at 22:58 (in 0 minutes) [pid 109]  
+
+        *** FINAL System shutdown message from root@myname.my.domain ***   
+
+System going down IMMEDIATELY   
+
+System shutdown time has arrived  
+Sep 18 22:58:41 myname shutdown: halt by root:    
+myname# logout  
+
+4.3 BSD UNIX (myname.my.domain) (console)   
+
+ login: Sep 18 22:58:44 myname syslogd: going down on signal 15   
+syncing disks... done 
+ halting (in tight loop); hit 
+ 	^P 
+ 	HALT 
+
+Infinite loop, PC: 8002AFCD (BRB 8002AFCD)  
+
+</pre>
+</font>
+	<p>
+
+	</p></dd></dl>
+	<p>
+
+	</p></dd><dt><h3><a name="bsd43reno"> Installing 4.3BSD-Reno </a> </h3>
+	</dt><dd>
+	This installation was tricky.  Whenever I tried to follow the setup
+	<a href="http://www.unixprogram.com/manuals/smm.01.setup.vax.pdf">instructions</a>,
+	either the kernel and/or the emulator would get into a
+	<a href="http://mailman.trailing-edge.com/pipermail/simh/2006-February/000465.html"> strange state </a>.
+	I decided to start with a fully installed base 4.3BSD system and use
+	4.3BSD to install 4.3BSD-Reno to another disk image.
+	I wrote some
+	<a href="http://www.employees.org/~kirk/page0301.html#getbsd43"> scripts </a>
+	to automate the setup and installation.
+	<p>
+
+	</p><dl>
+	<dt> create a base 4.3BSD system <a href="http://www.employees.org/~kirk/page0207.html#bsd43"> ra81 disk image </a>
+	</dt><dd>
+<pre>gmake DESTDIR=../dist43reno -C ../dist43 install
+</pre>
+	<p>
+
+	</p></dd><dt> download the archives required to create installation tape
+	</dt><dd>
+<pre>wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD-Reno/src.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD-Reno/stand.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD-Reno/miniroot.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD-Reno/rootdump.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD-Reno/usr.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD-Reno/srcsys.tar.gz
+wget http://www.tribug.org/pub/tuhs/4BSD/Distributions/4.3BSD-Reno/contrib.tar.gz
+gzunip *.gz
+</pre>
+	<p>
+
+	</p></dd><dt> format the <i>Installing and Operating 4.3BSD-tahoe UNIX on the VAX</i> paper
+	</dt><dd>
+<pre>pax -rv -pm -f src.tar -sTshare/doc/smm/01.setup/common/T./T \
+    share/doc/smm/01.setup/common/?.t
+pax -rv -pm -f src.tar -sTshare/doc/smm/01.setup/vax/T./T \
+    share/doc/smm/01.setup/vax/?.t
+groff -t -ms 0.t 1.t 2.t 3.t 4.t 5.t 6.t a.t b.t c.t | gzip -9 &gt; setup.ps.gz
+</pre>
+	<p>
+
+	</p></dd><dt> download kermit to install in <tt>/usr/new</tt>
+	</dt><dd>
+<pre>wget ftp://kermit.columbia.edu/kermit/bin/cku211.bsd43-vax
+wget ftp://kermit.columbia.edu/kermit/bin/gku100.vax-bsd-4.3
+chmod a+rx,a-w cku211.bsd43-vax gku100.vax-bsd-4.3
+</pre>
+	<p>
+
+	</p></dd><dt> create an extra archive for additional software to install on target
+	</dt><dd>
+<pre>pax -vw -f install.tar \
+    -sTinstall.shT./tmp/install.shT \
+    -sTcku211.bsd43-vaxT./usr/new/kermitT \
+    -sTgku100.vax-bsd-4.3T./usr/new/gkermitT \
+    install.sh cku211.bsd43-vax gku100.vax-bsd-4.3
+</pre>
+	<p>
+
+	</p></dd><dt> create the installation tape in SIMH format
+	</dt><dd>
+<pre>perl ./mkdisttap.pl &gt; bsd.tap
+</pre>
+	<p>
+
+	</p></dd><dt> extract the boot images from the archives
+	</dt><dd>
+<pre>pax -rv -pm -f srcsys.tar -sT./vaxdistT./T ./vaxdist/tp/copy
+pax -rv -pm -f srcsys.tar -sT./vaxdistT./T ./vaxdist/tp/boot
+</pre>
+	<p>
+
+	</p></dd><dt> create a blank RA81 disk image
+	</dt><dd>
+<pre>dd if=/dev/zero of=ra81.dsk bs=1048576 count=435
+</pre>
+	<p>
+
+	</p></dd><dt> run expect to automate SIMH and 4.3BSD -- the install.sh script
+		does most of the work
+	</dt><dd>
+<pre>env TZ=Canada/Pacific BSDVAX=/usr/local/bin/simh-vax780 expect install.exp
+</pre>
+	<p>
+
+	</p></dd><dt> output log of the expect script
+	</dt><dd>
+<font size="-1">
+<pre>
+VAX780 simulator V3.6-0  
+Listening on port 2311 (socket 8)  
+Modem control activated  
+sim&gt; load -o ./boot43 0  
+sim&gt; d r10 9  
+sim&gt; d r11 0  
+sim&gt; run 2  
+
+ Boot 
+ : ra(0,0)vmunix 
+ 279844+80872+100324 start 0x12f8 
+ 4.3 BSD UNIX #1: Fri Jun  6 19:55:29 PDT 1986 
+     karels@monet.Berkeley.EDU:/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 140 
+ avail mem = 7187456 
+ using 140 buffers containing 524288 bytes of memory 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ ra0 at uda0 slave 0 
+ ra1 at uda0 slave 1 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ Changing root device to ra0a 
+ Fast boot ... skipping disk checks  
+checking quotas: done.  
+starting system logger  
+checking for core dump... /a/crash: No such file or directory  
+Sep 18 23:03:32 myname savecore: /a/crash: No such file or directory   
+
+starting local daemons: namedSep 18 23:03:32 myname named[48]: No root Nameserver   
+ sendmail.  
+preserving editor files  
+clearing /tmp  
+standard daemons: update cron accounting.  
+starting network daemons: rwhod inetd printer.  
+Mon Sep 18 23:03:33 PDT 2006  
+
+4.3 BSD UNIX (myname.my.domain) (console)   
+
+ login: root   
+Last login: Mon Sep 18 22:58:40 on console  
+Sep 18 23:03:36 myname login: ROOT LOGIN console   
+4.3 BSD UNIX #1: Fri Jun  6 19:55:29 PDT 1986  
+
+Would you like to play a game?  
+
+Don't login as root, use su  
+myname# sync ; sync ; sync  
+myname# mt rew  
+myname# mt fsf 3  
+myname# tar xpbf 20 /dev/rmt12 ./tmp  
+myname# /bin/sh /tmp/install.sh  
+XXXX mkdir /mnt2  
+mkdir: /mnt2: File exists  
+XXXX newfs /dev/ra1a  
+Warning: 538 sector(s) in last cylinder unallocated  
+/dev/rra1a:     15884 sectors in 23 cylinders of 14 tracks, 51 sectors  
+        8.1Mb in 2 cyl groups (16 c/g, 5.85Mb/g, 1856 i/g)  
+super-block backups (for fsck -b#) at:  
+ 32, 11520,  
+XXXX mount /dev/ra1a  
+XXXX cd /mnt2  
+XXXX mt rew  
+XXXX mt fsf 2  
+XXXX restore  
+XXXX /mnt2/dev  
+XXXX MAKEDEV  
+XXXX /mnt2  
+XXXX newfs /dev/ra1h  
+Warning: 680 sector(s) in last cylinder unallocated  
+/dev/rra1h:     291346 sectors in 409 cylinders of 14 tracks, 51 sectors  
+        149.2Mb in 26 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)  
+super-block backups (for fsck -b#) at:  
+ 32, 11520, 23008, 34496, 45984, 57472, 68960, 80448, 91936, 103424,  
+ 114912, 126400, 137888, 149376, 160864, 172352, 182816, 194304, 205792, 217280,  
+ 228768, 240256, 251744, 263232, 274720, 286208,  
+XXXX newfs /dev/ra1g  
+/dev/rra1g:     515508 sectors in 722 cylinders of 14 tracks, 51 sectors  
+        263.9Mb in 46 cyl groups (16 c/g, 5.85Mb/g, 2048 i/g)  
+super-block backups (for fsck -b#) at:  
+ 32, 11520, 23008, 34496, 45984, 57472, 68960, 80448, 91936, 103424,  
+ 114912, 126400, 137888, 149376, 160864, 172352, 182816, 194304, 205792, 217280,  
+ 228768, 240256, 251744, 263232, 274720, 286208, 297696, 309184, 320672, 332160,  
+ 343648, 355136, 365600, 377088, 388576, 400064, 411552, 423040, 434528, 446016,  
+ 457504, 468992, 480480, 491968, 503456, 514944,  
+XXXX mount /mnt2/usr  
+XXXX mt rew  
+XXXX mt fsf 3  
+XXXX tar install.tar  
+x ./usr/new/gkermit, 46080 bytes, 90 tape blocks  
+XXXX mt fsf  
+XXXX cd /mnt2/usr  
+XXXX tar  
+XXXX mkdir src  
+XXXX mount /mnt2/usr/src  
+XXXX mkdir src/sys  
+XXXX cd src  
+XXXX mt fsf  
+XXXX tar  
+XXXX cd sys  
+XXXX mt fsf  
+XXXX tar  
+XXXX cd /mnt2  
+XXXX chmod  
+XXXX rm sys  
+XXXX ln  
+XXXX mkdir usr/src/contrib  
+XXXX cd usr/src/contrib  
+XXXX mt fsf  
+XXXX tar  
+XXXX cd /  
+XXXX touch /var/spool/uucp/ERRORS  
+XXXX sed /etc/fstab  
+XXXX alter /etc/netstart  
+XXXX sync  
+XXXX umount /dev/ra1g  
+XXXX umount /dev/ra1h  
+XXXX umount /dev/ra1a  
+YYYY done  
+myname# shutdown -f -r now ; sync ; sync ; exit  
+Shutdown at 23:08 (in 0 minutes) [pid 370]  
+myname# logout  
+
+        *** FINAL System shutdown message from root@myname.my.domain ***   
+
+System going down IMMEDIATELY   
+
+System shutdown time has arrived  
+Sep 18 23:08:26 myname shutdown: reboot by root:    
+
+4.3 BSD UNIX (myname.my.domain) (console)   
+
+ login: Sep 18 23:08:29 myname syslogd: going down on signal 15   
+syncing disks... done 
+
+Reboot requested, PC: 8002B03A (MOVL 8004F628,R0)  
+sim&gt;   
+sim&gt; load -o ./tp/boot 0  
+sim&gt; run 2  
+cpu: 780 
+ tr1: mem 
+ tr2: mem 
+ tr3: uba0 umem0 (2013e000) 
+
+ Boot 
+ : ra(1,0)vmunix 
+ ra1: unlabeled 
+ 441420+129124+180204 start 0x239c 
+ 4.3 BSD Reno UNIX #4: Sat Jul 28 13:24:08 PDT 1990 
+     trent@kerberos.berkeley.edu:/nbsd/usr/src/sys/GENERIC.allvax 
+ real mem = 8388608 
+ SYSPTSIZE limits number of buffers to 104 
+ avail mem = 6887424 
+ using 104 buffers containing 524288 bytes of memory 
+ VAX 11/780, serial# 1234(0), hardware ECO level 7(112) 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ uda0: version 3 model 6 
+ uda0: DMA burst size set to 4 
+ ra0 at uda0 slave 0: no disk label: ra81, size = 891072 sectors 
+ ra1 at uda0 slave 1: no disk label: ra81, size = 891072 sectors 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ root device? ra1 
+ erase ^?, kill ^U, intr ^C  
+# fsck -y /dev/rra1a /dev/rra1h /dev/rra1g  
+** /dev/rra1a  
+IMPOSSIBLE INTERLEAVE=0 IN SUPERBLOCK  
+SET TO DEFAULT? yes  
+
+IMPOSSIBLE NPSECT=0 IN SUPERBLOCK  
+SET TO DEFAULT? yes  
+
+** Last Mounted on /mnt2  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+398 files, 2940 used, 4489 free (17 frags, 559 blocks, 0.2% fragmentation)  
+
+***** FILE SYSTEM WAS MODIFIED *****  
+** /dev/rra1h  
+IMPOSSIBLE INTERLEAVE=0 IN SUPERBLOCK  
+SET TO DEFAULT? yes  
+
+IMPOSSIBLE NPSECT=0 IN SUPERBLOCK  
+SET TO DEFAULT? yes  
+
+** Last Mounted on /mnt2/usr  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+3708 files, 42327 used, 96257 free (337 frags, 11990 blocks, 0.2% fragmentation)  
+
+***** FILE SYSTEM WAS MODIFIED *****  
+** /dev/rra1g  
+IMPOSSIBLE INTERLEAVE=0 IN SUPERBLOCK  
+SET TO DEFAULT? yes  
+
+IMPOSSIBLE NPSECT=0 IN SUPERBLOCK  
+SET TO DEFAULT? yes  
+
+** Last Mounted on /mnt2/usr/src  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+13859 files, 99001 used, 146224 free (600 frags, 18203 blocks, 0.2% fragmentation)  
+
+***** FILE SYSTEM WAS MODIFIED *****  
+# disklabel -rw ra1 ra81 Reno /usr/mdec/rdboot /usr/mdec/bootra  
+disklabel: /usr/mdec/rdboot: No such file or directory  
+# sync ; sync ; sync  
+# halt  
+syncing disks... done 
+ halting (in tight loop); hit 
+ 	^P 
+ 	HALT 
+
+Infinite loop, PC: 8004C16E (BRB 8004C16E)  
+
+</pre>
+</font>
+	<p>
+
+	</p></dd></dl>
+	<p>
+
+	</p></dd><dt><h3><a name="bsd43tahoe"> Installing 4.3BSD-Tahoe </a> </h3>
+	</dt><dd>
+	The
+	<a href="http://www.tuhs.org/Archive/4BSD/Distributions/4.3BSD-Tahoe/BROKEN"> TUHS 4.3BSD-Tahoe image </a>
+	is incomplete.
+	I have asked Santa for the 
+	<a href="http://www.mckusick.com/csrg/"> CSRG Archive CD-ROMs </a>
+	to identify the missing pieces.
+	<p>
+
+	</p></dd><dt><h3><a name="bsd43Quasijarus"> Installing 4.3BSD-Quasijarus </a> </h3>
+	</dt><dd>
+	<p>
+	I used the same scripts as the <a href="http://www.employees.org/~kirk/page0207.html#bsd43"> 4.3BSD </a> installation.  The only extra
+	steps are using disklabel and a
+	<a href="http://minnie.tuhs.org/Quasijarus/compress.html"> special tool </a>
+	to decompresses the archives -- 
+	<a href="http://www.tribug.org/pub/tuhs/4BSD/Distributions/components/compress.tar"> gzcompat </a>.
+
+	</p><dl>
+	<dt> download the archives required to create installation tape
+	</dt><dd>
+<pre>wget ftp://ifctfvax.harhan.org/pub/UNIX/4.3BSD-Quasijarus0c/stand.Z
+./gzcompat &lt; stand.Z | gzcat &gt; stand
+wget ftp://ifctfvax.harhan.org/pub/UNIX/4.3BSD-Quasijarus0c/miniroot.Z
+./gzcompat &lt; miniroot.Z | gzcat &gt; miniroot
+wget ftp://ifctfvax.harhan.org/pub/UNIX/4.3BSD-Quasijarus0c/rootdump.Z
+./gzcompat &lt; rootdump.Z | gzcat &gt; rootdump
+wget ftp://ifctfvax.harhan.org/pub/UNIX/4.3BSD-Quasijarus0c/usr.tar.Z
+./gzcompat &lt; usr.tar.Z | gzcat &gt; usr.tar
+wget ftp://ifctfvax.harhan.org/pub/UNIX/4.3BSD-Quasijarus0c/srcsys.tar.Z
+./gzcompat &lt; srcsys.tar.Z | gzcat &gt; srcsys.tar
+wget ftp://ifctfvax.harhan.org/pub/UNIX/4.3BSD-Quasijarus0c/src.tar.Z
+./gzcompat &lt; src.tar.Z | gzcat &gt; src.tar
+</pre>
+	<p>
+
+	</p></dd><dt> create the installation tape in SIMH format
+	</dt><dd>
+<pre>perl ./mkdisttap.pl &gt; bsd.tap
+</pre>
+	<p>
+
+	</p></dd><dt> extract the boot images from the archives
+	</dt><dd>
+<pre>pax -rv -pm -f srcsys.tar -sT./vaxdist/T./T ./vaxdist/tp/copy
+pax -rv -pm -f srcsys.tar -sT./vaxdist/T./T ./vaxdist/tp/boot
+pax -rv -pm -f srcsys.tar -sT./floppy/bootTboot43T ./floppy/boot
+</pre>
+	<p>
+
+	</p></dd><dt> create a blank RA81 disk image
+	</dt><dd>
+<pre>dd if=/dev/zero of=ra81.dsk bs=1048576 count=435
+</pre>
+	<p>
+
+	</p></dd><dt> run expect to automate SIMH and 4.3BSD, following the
+	<i>Installing and Operating 4.3BSD on the VAX</i> instructions
+	</dt><dd>
+<pre>env BSDDISKLABEL=Quasijarus TZ=Canada/Pacific BSDVAX=simh-vax780 expect ../inc/install.exp
+</pre>
+	<p>
+
+	</p></dd><dt> output log of the expect script
+	</dt><dd>
+<font size="-1">
+<pre>
+VAX780 simulator V3.6-0  
+Listening on port 2311 (socket 7)  
+Modem control activated  
+sim&gt; load -o ./tp/copy 0  
+sim&gt; run 2  
+From: ts(0,1) 
+ To: ra(0,1) 
+ ra0: unlabeled 
+ Copy completed: 308 records copied 
+
+HALT instruction, PC: 00000001 (HALT)  
+sim&gt; load -o ./tp/boot 0  
+sim&gt; run 2  
+
+ Boot 
+ : ra(0,1)vmunix 
+ ra0: unlabeled 
+ 326312+104440+130352 start 0x23b8 
+ 4.3 BSD Quasijarus UNIX #3: Sat Feb 14 20:31:03 PST 2004 
+     root@luthien.Harhan.ORG:/nbsd/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 128 
+ avail mem = 7085056 
+ using 128 buffers containing 524288 bytes of memory 
+ VAX 11/780, serial# 1234(0), hardware ECO level 7(112) 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ uda0: version 3 model 6 
+ uda0: DMA burst size set to 4 
+ ra0 at uda0 slave 0: no disk label: ra81, size = 891072 sectors 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ root device? ra0* 
+ WARNING: clock lost 148 days -- CHECK AND RESET THE DATE! 
+ erase ^?, kill ^U, intr ^C  
+# disklabel -rw ra0 ra81 Quasijarus /usr/mdec/rdboot /usr/mdec/bootra  
+# disk=ra0 type=ra81 tape=ts xtr  
+Build root file system  
+Warning: 538 sector(s) in last cylinder unallocated  
+/dev/rra0a:     15884 sectors in 23 cylinders of 14 tracks, 51 sectors  
+        8.1MB in 2 cyl groups (16 c/g, 5.85MB/g, 2688 i/g)  
+super-block backups (for fsck -b #) at:  
+ 32, 11520,  
+Check the file system  
+** /dev/rra0a  
+** Last Mounted on   
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+1 files, 1 used, 7220 free (20 frags, 900 blocks, 0.3% fragmentation)  
+Rewind tape  
+Restore the dump image of the root  
+** /dev/rra0a  
+** Last Mounted on /a  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+426 files, 5195 used, 2026 free (18 frags, 251 blocks, 0.2% fragmentation)  
+Root filesystem extracted  
+
+If this is an 8650 or 8600, update the console rl02  
+If this is a 780 or 785, update the floppy  
+If this is a 730, update the cassette  
+# sync ; sync ; sync  
+#   
+Simulation stopped, PC: 800029AF (BNEQ 800029C6)  
+sim&gt; load -o ./boot43 0  
+sim&gt; d r10 9  
+sim&gt; d r11 0  
+sim&gt; run 2  
+
+ Boot 
+ : /vmunix 
+ 326312+104440+130352 start 0x23b8 
+ 4.3 BSD Quasijarus UNIX #3: Sat Feb 14 20:31:03 PST 2004 
+     root@luthien.Harhan.ORG:/nbsd/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 128 
+ avail mem = 7085056 
+ using 128 buffers containing 524288 bytes of memory 
+ VAX 11/780, serial# 1234(0), hardware ECO level 7(112) 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ uda0: version 3 model 6 
+ uda0: DMA burst size set to 4 
+ ra0 at uda0 slave 0: ra81, size = 891072 sectors 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ Changing root device to ra0a 
+ Automatic reboot in progress...  
+Thu Sep 18 23:11:51 PDT 2003  
+Can't open checklist file: /etc/fstab  
+Automatic reboot failed... help!  
+erase ^?, kill ^U, intr ^C  
+# disk=ra ; name=ra0h ; type=ra81  
+# cd /dev ; sh MAKEDEV ts0 dz0 ra1 ra2 ra3 ; cd / ; sync ; sync ; sync  
+# date  
+Thu Sep 18 23:11:59 PDT 2003  
+# date 12312359.59  
+date: can't write wtmp file.  
+Wed Dec 31 23:59:59 PST 2003  
+# date  
+Thu Jan  1 00:00:00 PST 2004  
+d# ate 12312359.59  
+date: can't write wtmp file.  
+Fri Dec 31 23:59:59 PST 2004  
+# date  
+Sat Jan  1 00:00:00 PST 2005  
+d# ate 12312359.59  
+date: can't write wtmp file.  
+Sat Dec 31 23:59:59 PST 2005  
+# date  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sat Dec 31 23:59:59 PST 2005  
+d# ate  
+Sun Jan  1 00:00:00 PST 2006  
+d# ate 09190612.02  
+date: can't write wtmp file.  
+Tue Sep 19 06:12:02 PDT 2006  
+# date  
+Tue Sep 19 06:12:02 PDT 2006  
+# hostname Quasijarus  
+# newfs ${name} ${type}  
+Warning: 680 sector(s) in last cylinder unallocated  
+/dev/rra0h:     291346 sectors in 409 cylinders of 14 tracks, 51 sectors  
+        149.2MB in 26 cyl groups (16 c/g, 5.85MB/g, 2688 i/g)  
+super-block backups (for fsck -b #) at:  
+ 32, 11520, 23008, 34496, 45984, 57472, 68960, 80448, 91936,  
+ 103424, 114912, 126400, 137888, 149376, 160864, 172352, 182816, 194304,  
+ 205792, 217280, 228768, 240256, 251744, 263232, 274720, 286208,  
+# mount /dev/${name} /usr  
+# cd /usr  
+# mt rew ; mt fsf 3  
+# tar xpbf 20 /dev/rmt12  
+# mkdir /mnt2 src src/sys  
+# cd src/sys  
+# mt fsf  
+# tar xpbf 20 /dev/rmt12  
+# cd / ; chmod 755 / /usr /usr/src /usr/src/sys  
+# rm -f sys ; ln -s usr/src/sys sys  
+# umount /dev/${name}  
+# fsck /dev/r${name}  
+** /dev/rra0h  
+** Last Mounted on /usr  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+3913 files, 30316 used, 106188 free (332 frags, 13232 blocks, 0.2% fragmentation)  
+# /etc/mount /dev/${name} /usr  
+# cd /usr/src  
+# mt rew ; mt fsf 5  
+# tar xpbf 20 /dev/rmt12  
+# cd /  
+# mt rew ; mt fsf 9  
+# tar xvpbf 20 /dev/rmt12  
+x ./tmp/install.sh, 1662 bytes, 4 tape blocks  
+x ./usr/new/gkermit, 46080 bytes, 90 tape blocks  
+# cd / ; cp /etc/fstab.ra81 /etc/fstab  
+# newfs /dev/rra0g ra81  
+Warning: inode blocks/cyl group (98) &gt;= data blocks (89) in last  
+    cylinder group. This implies 1428 sector(s) cannot be allocated.  
+/dev/rra0g:     514080 sectors in 720 cylinders of 14 tracks, 51 sectors  
+        263.2MB in 45 cyl groups (16 c/g, 5.85MB/g, 2688 i/g)  
+super-block backups (for fsck -b #) at:  
+ 32, 11520, 23008, 34496, 45984, 57472, 68960, 80448, 91936,  
+ 103424, 114912, 126400, 137888, 149376, 160864, 172352, 182816, 194304,  
+ 205792, 217280, 228768, 240256, 251744, 263232, 274720, 286208, 297696,  
+ 309184, 320672, 332160, 343648, 355136, 365600, 377088, 388576, 400064,  
+ 411552, 423040, 434528, 446016, 457504, 468992, 480480, 491968, 503456,  
+# touch /etc/named.boot  
+# sync ; sync ; sync  
+# cd / ; umount /usr  
+# fsck -y /dev/rra0a  
+** /dev/rra0a  
+** Last Mounted on /  
+** Root file system  
+** Phase 1 - Check Blocks and Sizes  
+** Phase 2 - Check Pathnames  
+** Phase 3 - Check Connectivity  
+** Phase 4 - Check Reference Counts  
+** Phase 5 - Check Cyl groups  
+498 files, 5200 used, 2021 free (21 frags, 250 blocks, 0.3% fragmentation)  
+# halt  
+syncing disks... done 
+ halting (in tight loop); hit 
+ 	^P 
+ 	HALT 
+
+Infinite loop, PC: 8002F4B1 (BRB 8002F4B1)  
+sim&gt; load -o ./boot43 0  
+sim&gt; d r10 9  
+sim&gt; d r11 0  
+sim&gt; run 2  
+
+ Boot 
+ : /vmunix 
+ 326312+104440+130352 start 0x23b8 
+ 4.3 BSD Quasijarus UNIX #3: Sat Feb 14 20:31:03 PST 2004 
+     root@luthien.Harhan.ORG:/nbsd/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 128 
+ avail mem = 7085056 
+ using 128 buffers containing 524288 bytes of memory 
+ VAX 11/780, serial# 1234(0), hardware ECO level 7(112) 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ uda0: version 3 model 6 
+ uda0: DMA burst size set to 4 
+ ra0 at uda0 slave 0: ra81, size = 891072 sectors 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ Changing root device to ra0a 
+ Automatic reboot in progress...  
+Mon Sep 18 23:15:41 PDT 2006  
+/dev/ra0a: SUMMARY INFORMATION BAD (SALVAGED)  
+/dev/ra0a: 498 files, 5200 used, 2021 free (21 frags, 250 blocks, 0.3% fragmentation)  
+
+Reboot requested, PC: 8002F56C (MOVL 8005BC40,R0)  
+sim&gt; load -o ./boot43 0  
+sim&gt; d r10 9  
+sim&gt; d r11 0  
+sim&gt; run 2  
+
+ Boot 
+ : /vmunix 
+ 326312+104440+130352 start 0x23b8 
+ 4.3 BSD Quasijarus UNIX #3: Sat Feb 14 20:31:03 PST 2004 
+     root@luthien.Harhan.ORG:/nbsd/usr/src/sys/GENERIC 
+ real mem  = 8388608 
+ SYSPTSIZE limits number of buffers to 128 
+ avail mem = 7085056 
+ using 128 buffers containing 524288 bytes of memory 
+ VAX 11/780, serial# 1234(0), hardware ECO level 7(112) 
+ mcr0 at tr1 
+ mcr1 at tr2 
+ uba0 at tr3 
+ hk0 at uba0 csr 177440 vec 210, ipl 15 
+ rk0 at hk0 slave 0 
+ rk1 at hk0 slave 1 
+ rk2 at hk0 slave 2 
+ rk3 at hk0 slave 3 
+ uda0 at uba0 csr 172150 vec 774, ipl 15 
+ uda0: version 3 model 6 
+ uda0: DMA burst size set to 4 
+ ra0 at uda0 slave 0: ra81, size = 891072 sectors 
+ zs0 at uba0 csr 172520 vec 224, ipl 15 
+ ts0 at zs0 slave 0 
+ dz0 at uba0 csr 160100 vec 300, ipl 15 
+ Changing root device to ra0a 
+ Automatic reboot in progress...  
+Mon Sep 18 23:15:54 PDT 2006  
+/dev/ra0a: 498 files, 5200 used, 2021 free (21 frags, 250 blocks, 0.3% fragmentation)  
+/dev/rra0h: SUMMARY INFORMATION BAD (SALVAGED)  
+/dev/rra0h: 12313 files, 71726 used, 64778 free (114 frags, 8083 blocks, 0.1% fragmentation)  
+/dev/rra0g: SUMMARY INFORMATION BAD (SALVAGED)  
+/dev/rra0g: 1 files, 1 used, 241182 free (14 frags, 30146 blocks, 0.0% fragmentation)  
+Mon Sep 18 23:16:17 PDT 2006  
+checking quotas: done.  
+starting system logger  
+
+preserving editor files  
+clearing /tmp  
+standard daemons: update cron accounting.  
+starting network daemons: routed named inetd printer.  
+starting local daemons: sendmail.  
+Mon Sep 18 23:16:22 PDT 2006  
+
+4.3 BSD UNIX (myname.my.domain) (console)   
+
+ login: root   
+Sep 18 23:16:25 myname login: ROOT LOGIN console   
+4.3 BSD Quasijarus UNIX #3: Sat Feb 14 20:31:03 PST 2004  
+
+Welcome to UNIX!  
+
+erase ^?, kill ^U, intr ^C  
+# cd / ; sed 's/ra0/ra2/' &lt; /etc/fstab.ra81 &gt; /etc/fstab  
+# sync ; sync ; shutdown -f -h now ; sync ; sync ; exit  
+Shutdown at 23:16 (in 0 minutes) [pid 200]  
+
+        *** FINAL System shutdown message from root@myname.my.domain ***   
+
+System going down IMMEDIATELY   
+
+System shutdown time has arrived  
+Sep 18 23:16:26 myname shutdown: halt by root:    
+# Sep 18 23:16:29 myname syslogd: exiting on signal 15   
+syncing disks... done 
+ halting (in tight loop); hit 
+ 	^P 
+ 	HALT 
+
+Infinite loop, PC: 8002F4B1 (BRB 8002F4B1)  
+
+</pre>
+</font>
+	<p>
+
+	</p></dd></dl>
+	<p>
+
+	</p></dd></dl>
+	</td></tr></tbody></table>
+</td>
+
+<td align="top" valign="top" rowspan="2" width="15%">
+	<table border="0" cellspacing="0" cellpadding="2"><tbody><tr><td>
+
+<table border="" cellspacing="0" cellpadding="1" bgcolor="#ffffff">
+<tbody><tr><td>
+	<table border="0" cellpadding="1" cellspacing="0" bgcolor="#ffffff">
+	<tbody><tr><td align="center">
+		<p><small><i>Ads by PARSE</i></small>
+	</p></td></tr><tr><td align="center">
+		<a href="http://www.employees.org/~kirk/page0290.html">
+			<p><font size="+1" color="#0000ff"><b>Irish Vax Wanted!</b></font><small><br>
+			<br>
+			<font color="#000000">
+			Are you looking for a good home for your Irish Vax or PDP11?
+			</font>
+			</small></p>
+		</a>
+		<a href="http://www.pdp12.org/admin/wanted.html">
+			<p><font size="+1" color="#0000ff"><b>Old PDP Computers?</b></font><small><br>
+			<br>
+			<font color="#000000">
+			Are you looking for a good home for your old PDP8 computer?
+			</font>
+			</small></p>
+		</a>
+	</td></tr>
+	</tbody></table>
+</td></tr>
+</tbody></table>
+
+	</td></tr></tbody></table>
+</td>
+
+</tr></tbody></table>
+
+<hr>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+	<td valign="TOP" align="CENTER">
+
+<center><form method="POST" action="http://www.scroogle.org/cgi-bin/nbbw.cgi">
+<input type="text" name="Gw" size="25" maxlength="225">
+<input type="submit" value="Search">
+<br><font size="2"><input type="hidden" name="n" value="2">
+<input type="radio" name="d" value="www.ba23.org" checked="">www.ba23.org
+&nbsp; &nbsp; <input type="radio" name="d" value="*">web
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+<br></font></form></center>
+
+	</td>
+
+	<td valign="TOP" align="LEFT">
+	</td>
+
+	<td valign="TOP" align="RIGHT">
+	</td>
+</tr></tbody></table>
+
+<hr>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+	<td valign="TOP" align="LEFT">
+	<small><a href="http://www.employees.org/~kirk/contact.html">(Contact me)</a></small>
+	</td>
+
+	<td valign="TOP" align="CENTER">
+<small>This page was updated on 2007/06/02.</small>
+
+	<a href="http://www.linkedin.com/in/kirkrussell"><img src="http://www.linkedin.com/img/webpromo/btn_myprofile_160x33.gif" width="160" height="33" border="0" alt="View Kirk Russell&#39;s profile on LinkedIn"></a>
+	</td>
+
+	<td valign="TOP" align="RIGHT">
+	<small><a href="http://www.employees.org/~kirk/disclaimer.html">Copyright &#169; 2006 Kirk J. Russell <br> ALL RIGHTS RESERVED.</a></small>
+	</td>
+</tr></tbody></table>
+
+<table width="100%" border="0" cellpadding="0" cellspacing="0"><tbody><tr>
+	<td valign="TOP" align="LEFT">
+
+
+
+</td></tr></tbody></table></body></html>
